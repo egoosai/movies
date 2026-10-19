@@ -1,0 +1,23 @@
+{% extends 'movies/_base.html' %}
+
+<html> 
+    <body>
+        {% block content %}
+        <h1>My Favorite Movies!</h1>   
+        {% if movies %}
+            <ul>
+                {% for movie in movies %}
+                    <!-- 
+                    <ul>：定义列表的容器（整个列表），<li>：定义列表中的每一项,两个要同时用
+                    |title是把movie首字母大写，
+                    |upper全大写
+                    -->
+                    <li>{{ movie|title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No movies found.</p>
+        {% endif %}
+        {% endblock %}
+     </body>
+</html>
